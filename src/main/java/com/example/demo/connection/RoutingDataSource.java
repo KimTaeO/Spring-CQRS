@@ -5,7 +5,7 @@ import org.springframework.transaction.support.TransactionSynchronizationManager
 
 public class RoutingDataSource extends AbstractRoutingDataSource {
     @Override
-    protected Boolean determineCurrentLookupKey() {
-        return TransactionSynchronizationManager.isCurrentTransactionReadOnly();
+    protected String determineCurrentLookupKey() {
+        return TransactionSynchronizationManager.isCurrentTransactionReadOnly() ? "read" : "write";
     }
 }

@@ -16,7 +16,7 @@ import java.util.Map;
 
 @Configuration
 public class ConfigurationDatasource {
-    @Bean
+    @Bean("writeDataSource")
     @ConfigurationProperties(prefix = "spring.datasource.write.hikari")
     public DataSource writeDataSource() {
         return DataSourceBuilder.create()
@@ -24,7 +24,7 @@ public class ConfigurationDatasource {
                 .build();
     }
 
-    @Bean
+    @Bean("readDataSource")
     @ConfigurationProperties(prefix = "spring.datasource.read.hikari")
     public DataSource readDataSource() {
         return DataSourceBuilder.create()
@@ -33,7 +33,6 @@ public class ConfigurationDatasource {
     }
 
     @Bean
-    @Primary
     @DependsOn({"writeDataSource", "readDataSource"})
     public DataSource routingDataSource(
             @Qualifier("writeDataSource") DataSource writeDataSource,
@@ -52,6 +51,7 @@ public class ConfigurationDatasource {
     }
 
     @Bean
+    @Primary
     @DependsOn("routingDataSource")
     public LazyConnectionDataSourceProxy datasource(DataSource routingDataSource) {
         return new LazyConnectionDataSourceProxy(routingDataSource);
