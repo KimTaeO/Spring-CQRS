@@ -8,6 +8,10 @@ import com.example.demo.infrastructure.repository.BoardJPARepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 @RequiredArgsConstructor
 public class BoardPersistenceAdapter implements BoardPort {
@@ -19,5 +23,14 @@ public class BoardPersistenceAdapter implements BoardPort {
         BoardJPAEntity boardJPAEntity = boardMapper.toEntity(board);
 
         boardJPARepository.save(boardJPAEntity);
+    }
+
+    @Override
+    public List<Board> findAllBoard() {
+        List<BoardJPAEntity> boardJPAEntities = boardJPARepository.findAll();
+
+        return boardJPAEntities.stream().map(
+                boardMapper::toDomain
+        ).toList();
     }
 }
