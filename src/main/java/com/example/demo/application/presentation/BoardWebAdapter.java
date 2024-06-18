@@ -1,9 +1,9 @@
-package com.example.demo.command.presentation;
+package com.example.demo.application.presentation;
 
-import com.example.demo.command.data.dto.request.SaveBoardRequest;
-import com.example.demo.command.data.dto.response.QueryAllBoardResponse;
-import com.example.demo.command.usecase.QueryAllBoardUseCase;
-import com.example.demo.command.usecase.SaveBoardUseCase;
+import com.example.demo.application.data.dto.request.SaveBoardRequest;
+import com.example.demo.application.data.dto.response.QueryAllBoardResponse;
+import com.example.demo.application.usecase.QueryAllBoardUseCase;
+import com.example.demo.application.usecase.SaveBoardUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

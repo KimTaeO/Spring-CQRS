@@ -1,4 +1,4 @@
-package com.example.demo.command.port.in;
+package com.example.demo.application.port.in;
 
 import com.example.demo.domain.Board;
 

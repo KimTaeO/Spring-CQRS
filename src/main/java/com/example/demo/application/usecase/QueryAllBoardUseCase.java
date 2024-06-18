@@ -1,7 +1,7 @@
-package com.example.demo.command.usecase;
+package com.example.demo.application.usecase;
 
-import com.example.demo.command.data.dto.response.QueryAllBoardResponse;
-import com.example.demo.command.port.in.BoardPort;
+import com.example.demo.application.data.dto.response.QueryAllBoardResponse;
+import com.example.demo.application.port.in.BoardPort;
 import com.example.demo.domain.Board;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

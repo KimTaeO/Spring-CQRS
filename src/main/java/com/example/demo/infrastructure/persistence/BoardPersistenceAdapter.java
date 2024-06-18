@@ -1,6 +1,6 @@
 package com.example.demo.infrastructure.persistence;
 
-import com.example.demo.command.port.in.BoardPort;
+import com.example.demo.application.port.in.BoardPort;
 import com.example.demo.domain.Board;
 import com.example.demo.infrastructure.mapper.BoardMapper;
 import com.example.demo.infrastructure.persistence.entity.BoardJPAEntity;
@@ -8,9 +8,7 @@ import com.example.demo.infrastructure.repository.BoardJPARepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Component
 @RequiredArgsConstructor

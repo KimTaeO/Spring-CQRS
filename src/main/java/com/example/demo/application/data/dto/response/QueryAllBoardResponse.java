@@ -1,4 +1,4 @@
-package com.example.demo.command.data.dto.response;
+package com.example.demo.application.data.dto.response;
 
 public record QueryAllBoardResponse(
     Integer id,
