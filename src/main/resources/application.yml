@@ -2,14 +2,14 @@ spring:
   datasource:
     write:
       hikari:
-        jdbc-url: jdbc:mysql://localhost:3306/write?useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
+        jdbc-url: jdbc:mysql://localhost:3308/cqrs?useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
         driver-class-name: com.mysql.cj.jdbc.Driver
         username: root
         password: qwer1234
 
     read:
       hikari:
-        jdbc-url: jdbc:mysql://localhost:3306/read?useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
+        jdbc-url: jdbc:mysql://localhost:3308/cqrs?useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
         driver-class-name: com.mysql.cj.jdbc.Driver
         username: root
         password: qwer1234
